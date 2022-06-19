@@ -58,7 +58,7 @@ class FeatureCollection(GenericModel, Generic[Geom, Props]):
 
     type: str = Field("FeatureCollection", const=True)
     features: List[Feature[Geom, Props]]
-    bbox: Optional[BBox]
+    # bbox: Optional[BBox]
 
     def __iter__(self):
         """iterate over features"""
