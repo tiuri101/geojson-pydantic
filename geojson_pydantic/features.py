@@ -20,7 +20,7 @@ class Feature(GenericModel, Generic[Geom, Props]):
     geometry: Geom = None
     properties: Optional[Props]
     id: Optional[str]
-    bbox: Optional[BBox] = None
+    # bbox: Optional[BBox] = None
 
     class Config:
         """Model configuration."""
