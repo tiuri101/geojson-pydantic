@@ -13,7 +13,6 @@ from geojson_pydantic.types import (
     MultiLineStringCoords,
     MultiPointCoords,
     MultiPolygonCoords,
-    NumType,
     PolygonCoords,
     Position,
 )
@@ -177,7 +176,7 @@ class Polygon(_GeometryBase):
 
     @classmethod
     def from_bounds(
-        cls, xmin: NumType, ymin: NumType, xmax: NumType, ymax: NumType
+        cls, xmin: float, ymin: float, xmax: float, ymax: float
     ) -> "Polygon":
         """Create a Polygon geometry from a boundingbox."""
         return cls(
