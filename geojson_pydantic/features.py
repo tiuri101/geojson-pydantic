@@ -20,7 +20,7 @@ class Feature(GenericModel, Generic[Geom, Props]):
     geometry: Geom = None
     properties: Optional[Props]
     id: Optional[str]
-    # bbox: Optional[BBox] = None
+    bbox: Optional[BBox] = None
 
     class Config:
         """Model configuration."""
@@ -58,7 +58,7 @@ class FeatureCollection(GenericModel, Generic[Geom, Props]):
 
     type: str = Field("FeatureCollection", const=True)
     features: List[Feature[Geom, Props]]
-    # bbox: Optional[BBox]
+    bbox: Optional[BBox]
 
     def __iter__(self):
         """iterate over features"""

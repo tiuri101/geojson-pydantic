@@ -1,15 +1,9 @@
 """Types for geojson_pydantic models"""
 
-from typing import Tuple, Union
-
 from pydantic import conlist
 
-NumType = Union[float, int]
-BBox = Union[
-    Tuple[NumType, NumType, NumType, NumType],  # 2D bbox
-    Tuple[NumType, NumType, NumType, NumType, NumType, NumType],  # 3D bbox
-]
-Position = Union[Tuple[NumType, NumType], Tuple[NumType, NumType, NumType]]
+BBox = conlist(float, min_items=4, max_items=8)
+Position = conlist(float, min_items=2, max_items=4)
 
 # Coordinate arrays
 MultiPointCoords = conlist(Position, min_items=1)
